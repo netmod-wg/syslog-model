@@ -32,23 +32,23 @@ module ietf-syslog {
   }
 
   organization
-      "IETF NETMOD (Network Modeling) Working Group";
+    "IETF NETMOD (Network Modeling) Working Group";
 
   contact
-    "WG Web:   <http://tools.ietf.org/wg/netmod/>
+    "WG Web:   <https://datatracker.ietf.org/wg/netmod/>
      WG List:  <mailto:netmod@ietf.org>
 
-     Editor:   Kiran Agrahara Sreenivasa
-               <mailto:kirankoushik.agraharasreenivasa@
-                       verizonwireless.com>
+     Editor:   Mahesh Jethanandani
+               <mailto:mjethanandani@gmail.com>
 
-     Editor:   Clyde Wildes
-               <mailto:cwildes@cisco.com>";
+     Editor:   Joe Clarke
+               <mailto:jclarke@cisco.com>";
+
   description
     "This module contains a collection of YANG definitions
      for syslog configuration.
 
-     Copyright (c) 2018 IETF Trust and the persons identified as
+     Copyright (c) 2022 IETF Trust and the persons identified as
      authors of the code. All rights reserved.
      Redistribution and use in source and binary forms, with or
      without modification, is permitted pursuant to, and subject to
@@ -62,11 +62,10 @@ module ietf-syslog {
      'OPTIONAL' in the module text are to be interpreted as
      described in RFC 2119 (http://tools.ietf.org/html/rfc2119).
 
-     This version of this YANG module is part of RFC zzzz
-     (http://tools.ietf.org/html/rfczzzz); see the RFC itself for
-     full legal notices.";
+     This version of this YANG module is part of RFC zzzz;
+     see the RFC itself for full legal notices.";
 
-  revision 2018-03-15 {
+  revision YYYY-MM-DD {
     description
       "Initial Revision";
     reference
