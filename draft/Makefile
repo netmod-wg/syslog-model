@@ -48,9 +48,10 @@ endif
 	-rm -f ../bin/submodules/*\@$(shell date +%Y)*.yang
 	-rm -f ../bin/submodules/*\@$(shell date +%Y)*-*-*.yang
 
-$(next).xml: $(draft).xml 
+$(next).xml: $(draft).xml
+	-mkdir ../bin
 	sed -e"s/$(basename $<)-latest/$(basename $@)/" -e"s/YYYY-MM-DD/$(shell date +%Y-%m-%d)/" $< > $@
-	sed -e"s/YYYY-MM-DD/$(shell date +%Y-%m-%d)/" ../src/yang/<the yang model>.yang > ../bin/<the yang model>\@$(shell date +%Y-%m-%d).yang
+	sed -e"s/YYYY-MM-DD/$(shell date +%Y-%m-%d)/" ../src/yang/ietf-syslog.yang > ../bin/ietf-syslog\@$(shell date +%Y-%m-%d).yang
 	cd ../src; ./validate-and-gen-trees.sh; cd ..;
 	../src/insert-figures.sh $@ > tmp; mv tmp $@
 
