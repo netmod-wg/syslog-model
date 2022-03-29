@@ -26,9 +26,9 @@ next_ver ?= $(shell printf "%.2d" $$((1$(current_ver)-99)))
 endif
 next := $(draft)-$(next_ver)
 
-.PHONY: latest submit clean rib-clean
+.PHONY: latest submit clean
 
-default: $(next).xml $(next).txt $(next).html rib
+default: $(next).xml $(next).txt $(next).html
 
 idnits: $(next).txt
 	$(idnits) $<
