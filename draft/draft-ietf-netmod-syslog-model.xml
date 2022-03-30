@@ -17,6 +17,18 @@
     <title abbrev="Syslog Management">A YANG Data Model for Syslog
     Configuration</title>
 
+    <author fullname="Joe Clarke" initials="J" role="editor" surname="Clarke">
+      <organization>Cisco</organization>
+
+      <address>
+        <postal>
+          <country>US</country>
+        </postal>
+
+        <email>jclarke@cisco.com</email>
+      </address>
+    </author>
+
     <author fullname="Mahesh Jethanandani" initials="M" role="editor" surname="Jethanandani">
       <organization>Kloud Services</organization>
 
