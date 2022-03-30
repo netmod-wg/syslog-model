@@ -59,11 +59,11 @@ rm ../bin/*-sub-tree.txt.tmp
 echo "Validating examples"
 
 # Validate examples
-for i in yang/example-syslog-configuration-a.1.[0-3].xml
+for i in yang/example-syslog-configuration-4.[1-2].xml
 do
     name=$(echo $i | cut -f 1-3 -d '.')
     echo "Validating $name.xml"
-    response=`yanglint -ii -t config -p ../../../iana/yang-parameters  ../bin/ietf-syslog\@$(date +%Y-%m-%d).yang $name.xml`
+    response=`yanglint -ii -t config -p ../bin/iana/yang-parameters  ../bin/ietf-syslog\@$(date +%Y-%m-%d).yang $name.xml`
     if [ $? -ne 0 ]; then
        printf "failed (error code: $?)\n"
        printf "$response\n\n"
