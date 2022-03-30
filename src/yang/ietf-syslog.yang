@@ -13,8 +13,7 @@ module ietf-syslog {
   import ietf-interfaces {
     prefix if;
     reference
-      "I-D.ietf-netmod-rfc7223bis: A YANG Data Model
-       for Interface Management";
+      "RFC 8343: A YANG Data Model for Interface Management";
   }
 
   import ietf-tls-client {
@@ -42,7 +41,14 @@ module ietf-syslog {
                <mailto:mjethanandani@gmail.com>
 
      Editor:   Joe Clarke
-               <mailto:jclarke@cisco.com>";
+               <mailto:jclarke@cisco.com>
+
+     Editor:   Kiran Agrahara Sreenivasa
+               <mailto:kirankoushik.agraharasreenivasa@
+                       verizonwireless.com>
+
+     Editor:   Clyde Wildes
+               <mailto:cwildes@cisco.com>";
 
   description
     "This module contains a collection of YANG definitions

@@ -1,0 +1,23 @@
+<!--      
+      Enable remote logging of syslogs to udp destination
+      foo.example.com for facility auth, severity error
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<syslog xmlns="urn:ietf:params:xml:ns:yang:ietf-syslog">
+  <actions>
+    <remote>
+      <destination>
+        <name>remote1</name>
+        <udp>
+          <address>foo.example.com</address>
+        </udp>
+        <facility-filter>
+          <facility-list>
+            <facility>auth</facility>
+            <severity>error</severity>
+          </facility-list>
+        </facility-filter>
+      </destination>
+    </remote>
+  </actions>
+</syslog>

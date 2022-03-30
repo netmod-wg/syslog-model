@@ -1,0 +1,17 @@
+<!--
+     Enable console logging of syslogs of severity critical
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<syslog xmlns="urn:ietf:params:xml:ns:yang:ietf-syslog">
+  <actions>
+    <console>
+      <facility-filter>
+        <facility-list>
+          <facility>all</facility>
+          <severity>critical</severity>
+        </facility-list>
+      </facility-filter>
+    </console>
+  </actions>
+</syslog>
