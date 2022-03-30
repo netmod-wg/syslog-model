@@ -6,13 +6,13 @@ module example-vendor-syslog-types {
     prefix syslogtypes;
   }
 
-  organization "Example, Inc.";
+  organization
+    "Example, Inc.";
   contact
     "Example, Inc.
      Customer Service
 
      E-mail: syslog-yang@example.com";
-
   description
     "This module contains a collection of vendor-specific YANG type
      definitions for SYSLOG.";
