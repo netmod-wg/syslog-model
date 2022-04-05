@@ -3,3 +3,5 @@ draft-ietf-netmod-syslog-model-*.html
 draft-ietf-netmod-syslog-model-*.xml
 bin/*
 *~
+.vscode
+.DS_Store
