@@ -3,10 +3,8 @@ import os
 list_of_ietf_models =\
 [ ["ietf-tls-client", "draft-ietf-netconf-tls-client-server", "27"],
   ["ietf-crypto-types", "draft-ietf-netconf-crypto-types", "22"],
-  ["ietf-truststore", "draft-ietf-netconf-trust-anchors", "17"],
   ["ietf-tls-common", "draft-ietf-netconf-tls-client-server", "27"],
-  ["iana-tls-cipher-suite-algs", "draft-ietf-netconf-tls-client-server", "27"],
-  ["ietf-keystore", "draft-ietf-netconf-keystore", "24"] ]
+  ["iana-tls-cipher-suite-algs", "draft-ietf-netconf-tls-client-server", "27"]]
 
 def fetch_and_extract(draft, module, version):
     print("Fetching file " + draft + " with version " + version)
