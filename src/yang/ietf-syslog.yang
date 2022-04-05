@@ -19,11 +19,11 @@ module ietf-syslog {
       "I-D.ietf-netconf-tls-client-server:
        YANG Groupings for TLS Clients and TLS Servers";
   }
-  import ietf-keystore {
-    prefix ks;
+  import ietf-crypto-types {
+    prefix ct;
     reference
-      "I-D.ietf-netconf-keystore: YANG Data Model for a
-       Keystore Mechanism";
+      "I-D.ietf-netconf-crypto-types: YANG Data Types for
+       Cryptography";
   }
 
   organization
@@ -44,7 +44,6 @@ module ietf-syslog {
 
      Editor:   Clyde Wildes
                <mailto:cwildes@cisco.com>";
-
   description
     "This module contains a collection of YANG definitions
        for syslog configuration.
@@ -437,7 +436,7 @@ module ietf-syslog {
     }
     container advanced-compare {
       when "../severity != \"all\" and
-                       ../severity != \"none\"" {
+                 ../severity != \"none\"" {
         description
           "The advanced compare container is not applicable for
            severity 'all' or severity 'none'";
@@ -763,8 +762,7 @@ module ietf-syslog {
                      message signer.";
                 }
                 container cert {
-                  uses ks:private-key-grouping;
-                  uses ks:certificate-grouping;
+                  uses ct:asymmetric-key-pair-with-certs-grouping;
                   description
                     "This is the certificate that is periodically
                      sent to the remote receiver. Selection of the
