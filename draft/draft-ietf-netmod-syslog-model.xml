@@ -171,8 +171,8 @@
   <t>Artwork in this document contains shorthand references to drafts in
         progress. Please apply the following replacements: <list style="symbols">
     <t>
-      <spanx style="verb">I-D.ietf-netconf-keystore</spanx> --&gt;
-            the assigned RFC value for draft-ietf-netconf-keystore</t>
+      <spanx style="verb">I-D.ietf-netconf-crypto-types</spanx> --&gt;
+            the assigned RFC value for draft-ietf-netconf-crypto-types</t>
 
     <t>
       <spanx style="verb">I-D.ietf-netconf-tls-client-server</spanx>
@@ -302,7 +302,7 @@ INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
 <section title="The ietf-syslog Module">
 <t>This module imports typedefs from <xref target="RFC6991"/>,
 <xref target="RFC8343"/>,
-        groupings from <xref target="I-D.ietf-netconf-keystore"/>, 
+        groupings from <xref target="I-D.ietf-netconf-crypto-types"/>, 
         and <xref target="I-D.ietf-netconf-tls-client-server"/>, 
         and it references <xref target="RFC5424"/>,
         <xref target="RFC5425"/>, <xref target="RFC5426"/>, 
@@ -458,7 +458,7 @@ the following registration is requested:</t>
 
 <back>
 <references title="Normative References">
-<?rfc include="reference.I-D.ietf-netconf-keystore.xml"?>
+<?rfc include="reference.I-D.ietf-netconf-crypto-types.xml"?>
 
 <?rfc include="reference.I-D.ietf-netconf-tls-client-server.xml"?>
 
