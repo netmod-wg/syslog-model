@@ -436,7 +436,7 @@ module ietf-syslog {
     }
     container advanced-compare {
       when "../severity != \"all\" and
-                 ../severity != \"none\"" {
+            ../severity != \"none\"" {
         description
           "The advanced compare container is not applicable for
            severity 'all' or severity 'none'";
@@ -765,9 +765,9 @@ module ietf-syslog {
                   uses ct:asymmetric-key-pair-with-certs-grouping;
                   description
                     "This is the certificate that is periodically
-                     sent to the remote receiver. Selection of the
-                     certificate also implicitly selects the private
-                     key used to sign the syslog messages.";
+                     sent to the remote receiver. The certificate
+                     is inherintly associated with its private
+                     and public keys.";
                 }
                 leaf hash-algorithm {
                   type enumeration {
