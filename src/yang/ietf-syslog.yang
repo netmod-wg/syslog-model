@@ -762,7 +762,7 @@ module ietf-syslog {
                      message signer.";
                 }
                 container cert {
-                  uses ct:asymmetric-key-pair-with-certs-grouping;
+                  uses ct:asymmetric-key-pair-with-cert-grouping;
                   description
                     "This is the certificate that is periodically
                      sent to the remote receiver. The certificate
