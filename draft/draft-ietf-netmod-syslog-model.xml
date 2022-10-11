@@ -405,7 +405,7 @@ the following registration is requested:</t>
       protocols have mandatory-to-implement secure transport layers (e.g.,
       SSH, TLS) with mutual authentication.</t>
 
-<t>The NETCONF access control model (NACM) <xref target="RFC6536"/>
+<t>The NETCONF access control model (NACM) <xref target="RFC8341"/>
       provides the means to restrict access for particular users to a
       pre-configured subset of all available protocol operations and
       content.</t>
@@ -507,7 +507,7 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.6241.xml"?>
 
-<?rfc include="reference.RFC.6536.xml"?>
+<?rfc include="reference.RFC.8341.xml"?>
 
 <?rfc include="reference.RFC.8040.xml"?>
 
