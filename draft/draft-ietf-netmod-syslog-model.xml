@@ -381,7 +381,7 @@ the following registration is requested:</t>
 
 <section title="The YANG Module Names Registry">
 <t>This document registers one YANG module in the YANG Module Names
-        registry <xref target="RFC7895"/>. Following the format in <xref target="RFC7950"/>, 
+        registry <xref target="RFC8525"/>. Following the format in <xref target="RFC7950"/>, 
         the following registration is requested:</t>
 
 <t>
@@ -476,7 +476,7 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.6991.xml"?>
 
-<?rfc include="reference.RFC.7895.xml"?>
+<?rfc include="reference.RFC.8525.xml"?>
 
 <?rfc include="reference.RFC.7950.xml"?>
 
