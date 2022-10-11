@@ -738,7 +738,8 @@ module ietf-syslog {
           }
           container signing {
             if-feature "signed-messages";
-            presence "If present, syslog-signing options is activated.";
+            presence "If present, syslog-signing options is
+                      activated.";
             description
               "This container describes the configuration
                parameters for signed syslog messages.";
