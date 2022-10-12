@@ -43,7 +43,7 @@ module ietf-syslog {
                        verizonwireless.com>
 
      Editor:   Clyde Wildes
-               <mailto:cwildes@cisco.com>";
+               <mailto:clyde@clydewildes.com>";
   description
     "This module contains a collection of YANG definitions
        for syslog configuration.
