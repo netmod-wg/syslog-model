@@ -400,6 +400,32 @@ module ietf-syslog {
       "RFC 5424: The Syslog Protocol";
   }
 
+  identity action {
+    description
+      "Base identity for action within each action.";
+  }
+
+  identity log {
+    base action;
+    description
+      "This identity specifies that if the compare operation is
+       true the message will be logged.";
+  }
+
+  identity block {
+    base action;
+    description
+      "This identity specifies that if the compare operation is
+       true the message will not be blocked.";
+  }
+
+  identity stop {
+    base action;
+    description
+      "This identity specifies that if the compare operation is
+       true the message will not be stopped.";
+  }
+
   grouping severity-filter {
     description
       "This grouping defines the processing used to select
@@ -462,23 +488,14 @@ module ietf-syslog {
            severity with the specified severity.";
       }
       leaf action {
-        type enumeration {
-          enum log {
-            description
-              "This enum specifies that if the compare operation is
-               true the message will be logged.";
-          }
-          enum block {
-            description
-              "This enum specifies that if the compare operation is
-               true the message will not be logged.";
-          }
+        type identityref {
+          base "action";
         }
         default "log";
         description
           "The action can be used to specify if the message should
-           be logged or blocked based on the outcome of the compare
-           operation.";
+           be logged, blocked or stopped based on the outcome of the
+           compare operation.";
       }
       description
         "This container describes additional severity compare
