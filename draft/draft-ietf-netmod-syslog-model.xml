@@ -270,7 +270,7 @@ Collectors
       operation and an action. Compare operations are: "equals" to select
       messages with this single severity, or "equals-or-higher" to select
       messages of the specified severity and higher. Actions are used to log
-      the message or block the message from being logged.</t>
+      the message, block the message, or stop the message from being logged.</t>
 
 <t>Many vendors extend the list of facilities available for logging in
       their implementation. An example is included in Extending Facilities
