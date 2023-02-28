@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 <!--<?rfc strict="no"?> -->
-<rfc category="std" docName="draft-ietf-netmod-syslog-model-29" ipr="trust200902" submissionType="IETF" consensus="true">
+<rfc category="std" docName="draft-ietf-netmod-syslog-model-30" ipr="trust200902" submissionType="IETF" consensus="true">
   <front>
     <title abbrev="Syslog Management">A YANG Data Model for Syslog
     Configuration</title>
