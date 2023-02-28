@@ -12,7 +12,7 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 <!--<?rfc strict="no"?> -->
-<rfc category="std" docName="draft-ietf-netmod-syslog-model-28" ipr="trust200902" submissionType="IETF" consensus="true">
+<rfc category="std" docName="draft-ietf-netmod-syslog-model-29" ipr="trust200902" submissionType="IETF" consensus="true">
   <front>
     <title abbrev="Syslog Management">A YANG Data Model for Syslog
     Configuration</title>
@@ -52,7 +52,7 @@
           <code>95134</code>
           <country>US</country>
         </postal>
-	<phone>+1 415 819-6111</phone>
+        <phone>+1 415 819-6111</phone>
         <email>clyde@clydewildes.com</email>
       </address>
     </author>
@@ -117,7 +117,8 @@
       and the "severity" assigned to the message by the facility.</t>
 
     <t>Such definitions of syslog protocol are defined in 
-      <xref target="RFC5424"/>, and are used in this RFC.</t>
+      <xref target="RFC5424"/>
+, and are used in this RFC.</t>
 
     <t>The YANG model in this document conforms to the Network Management
       Datastore Architecture defined in 
@@ -135,14 +136,17 @@
 </section>
 
 <section title="Terminology">
-  <t>The term "originator" is defined in <xref target="RFC5424"/>: an
+  <t>The term "originator" is defined in <xref target="RFC5424"/>
+: an
         "originator" generates syslog content to be carried in a message.</t>
 
-  <t>The term "relay" is defined in <xref target="RFC5424"/>: a "relay"
+  <t>The term "relay" is defined in <xref target="RFC5424"/>
+: a "relay"
         forwards messages, accepting messages from originators or other relays
         and sending them to collectors or other relays</t>
 
-  <t>The term "collectors" is defined in <xref target="RFC5424"/>: a
+  <t>The term "collectors" is defined in <xref target="RFC5424"/>
+: a
         "collector" gathers syslog content for further analysis.</t>
 
   <t>The term "action" refers to the processing that takes place for
@@ -152,7 +156,8 @@
 <section title="NDMA Compliance">
   <t>The YANG model in this document conforms to the Network Management
   Datastore Architecture defined in
-  <xref target="RFC8342"/>.
+    <xref target="RFC8342"/>
+.
   </t>
 </section>
 
@@ -278,15 +283,16 @@ Collectors
 
 <section title="Syslog Module">
 <t>A simplified graphical representation of the data model is used in
-        this document. Please see <xref target="RFC8340"/> for
+        this document. Please see <xref target="RFC8340"/>
+ for
         tree diagram notation.</t>
 
-	<figure>
-	  <name>Tree Diagram for Syslog Model</name>
-	  <artwork><![CDATA[
+<figure>
+  <name>Tree Diagram for Syslog Model</name>
+  <artwork><![CDATA[
 INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
 
-]]></artwork>
+]]>  </artwork>
 </figure>
 </section>
 
@@ -294,18 +300,29 @@ INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
 
 <section title="Syslog YANG Module">
 <section title="The ietf-syslog Module">
-<t>This module imports typedefs from <xref target="RFC6991"/>,
-<xref target="RFC8343"/>,
-        groupings from <xref target="I-D.ietf-netconf-crypto-types"/>, 
-        and <xref target="I-D.ietf-netconf-tls-client-server"/>, 
-        and it references <xref target="RFC5424"/>,
-        <xref target="RFC5425"/>, <xref target="RFC5426"/>, 
-        and <xref target="RFC5848"/>, <xref target="RFC8089"/>,
-<xref target="RFC8174"/>, and <xref target="Std-1003.1-2008"/>.</t>
+<t>This module imports typedefs from <xref target="RFC6991"/>
+,
+<xref target="RFC8343"/>
+,
+        groupings from <xref target="I-D.ietf-netconf-crypto-types"/>
+, 
+        and <xref target="I-D.ietf-netconf-tls-client-server"/>
+, 
+        and it references <xref target="RFC5424"/>
+,
+<xref target="RFC5425"/>
+,<xref target="RFC5426"/>
+, 
+        and <xref target="RFC5848"/>
+,<xref target="RFC8089"/>
+,
+<xref target="RFC8174"/>
+, and <xref target="Std-1003.1-2008"/>
+.</t>
 
 <figure>
-  <name>Sylog YANG Model</name>
-  <artwork><![CDATA[
+<name>Sylog YANG Model</name>
+<artwork><![CDATA[
 <CODE BEGINS> file "ietf-syslog@YYYY-MM-DD.yang"
 INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD.yang)
 <CODE ENDS>
@@ -317,33 +334,33 @@ INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD.yang)
 </section>
 
 <section title="Usage Examples">
-  <section title="Syslog Configuration for Severity Critical">
-    <figure>
-      <name>Syslog Configuration for Severity Critical</name>
+<section title="Syslog Configuration for Severity Critical">
+<figure>
+<name>Syslog Configuration for Severity Critical</name>
 <artwork><![CDATA[
 INSERT_TEXT_FROM_FILE(../src/yang/example-syslog-configuration-7.1.xml,68)
 
 ]]></artwork>
 
-    </figure>
-  </section>
-  <section title="Remote Syslog Configuration">
-    <figure>
-      <name>Remote Syslog Configuration</name>
+</figure>
+</section>
+<section title="Remote Syslog Configuration">
+<figure>
+<name>Remote Syslog Configuration</name>
 <artwork><![CDATA[
 INSERT_TEXT_FROM_FILE(../src/yang/example-syslog-configuration-7.2.xml,68)
 
 ]]></artwork>
 
-    </figure>
-  </section>
+</figure>
+</section>
 </section>
 
 <section anchor="Acknowledgements" title="Acknowledgements">
-  <t>The authors wish to thank the following who commented on this
+<t>The authors wish to thank the following who commented on this
       proposal:</t>
 
-      <t>Andy Bierman, Martin Bjorklund, Alex Campbell, Alex Clemm,
+<t>Andy Bierman, Martin Bjorklund, Alex Campbell, Alex Clemm,
       Francis Dupont, Jim Gibson, Jeffrey Haas, Bob Harold, John
       Heasley, Giles Heron, Lisa Huang, Mahesh Jethanandani, Warren
       Kumari, Jeffrey K Lange, Jan Lindblad, Chris Lonvick, Alexey
@@ -359,7 +376,8 @@ INSERT_TEXT_FROM_FILE(../src/yang/example-syslog-configuration-7.2.xml,68)
 <section title="The IETF XML Registry">
 <t>This document registers one URI in the IETF XML registry <xref target="RFC3688"/>
 . 
-Following the format in <xref target="RFC3688"/>, 
+Following the format in <xref target="RFC3688"/>
+, 
 the following registration is requested:</t>
 
 <t>
@@ -375,7 +393,9 @@ the following registration is requested:</t>
 
 <section title="The YANG Module Names Registry">
 <t>This document registers one YANG module in the YANG Module Names
-        registry <xref target="RFC8525"/>. Following the format in <xref target="RFC7950"/>, 
+        registry <xref target="RFC8525"/>
+. Following the format in <xref target="RFC7950"/>
+, 
         the following registration is requested:</t>
 
 <t>
@@ -395,7 +415,8 @@ the following registration is requested:</t>
 <section title="Security Considerations">
 <t>The YANG module defined in this document is designed to be accessed
       via YANG based management protocols, such as NETCONF <xref target="RFC6241"/>
- and RESTCONF <xref target="RFC8040"/>. Both of these
+ and RESTCONF <xref target="RFC8040"/>
+. Both of these
       protocols have mandatory-to-implement secure transport layers (e.g.,
       SSH, TLS) with mutual authentication.</t>
 
