@@ -718,7 +718,7 @@ module ietf-syslog {
                                       "The leaf uniquely specifies
                                        the address of the remote
                                        host. One of the following
-                                       must bespecified: an ipv4
+                                       must be specified: an ipv4
                                        address, an ipv6 address, or a
                                        host name.";
                                 }
