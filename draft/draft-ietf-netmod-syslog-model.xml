@@ -12,12 +12,22 @@
 <?rfc-ext allow-markup-in-artwork="yes" ?>
 <?rfc-ext include-index="no" ?>
 <!--<?rfc strict="no"?> -->
-<rfc category="std" docName="draft-ietf-netmod-syslog-model-30" ipr="trust200902" submissionType="IETF" consensus="true">
+<rfc
+    category="std"
+    docName="draft-ietf-netmod-syslog-model-latest"
+    ipr="trust200902"
+    submissionType="IETF"
+    consensus="true">
+    <?rfc toc="yes"?>
+
   <front>
     <title abbrev="Syslog Management">A YANG Data Model for Syslog
     Configuration</title>
 
-    <author fullname="Joe Clarke" initials="J" role="editor" surname="Clarke">
+    <author fullname="Joe Clarke"
+	    initials="J"
+	    role="editor"
+	    surname="Clarke">
       <organization>Cisco</organization>
 
       <address>
@@ -29,7 +39,10 @@
       </address>
     </author>
 
-    <author fullname="Mahesh Jethanandani" initials="M" role="editor" surname="Jethanandani">
+    <author fullname="Mahesh Jethanandani"
+	    initials="M"
+	    role="editor"
+	    surname="Jethanandani">
       <organization>Kloud Services</organization>
 
       <address>
