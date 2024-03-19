@@ -494,6 +494,8 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.2119.xml"?>
 
+<?rfc include="reference.RFC.3688.xml"?>
+
 <?rfc include="reference.RFC.5424.xml"?>
 
 <?rfc include="reference.RFC.5425.xml"?>
@@ -502,15 +504,21 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.5848.xml"?>
 
+<?rfc include="reference.RFC.6241.xml"?>
+
 <?rfc include="reference.RFC.6991.xml"?>
 
 <?rfc include="reference.RFC.8525.xml"?>
 
 <?rfc include="reference.RFC.7950.xml"?>
 
+<?rfc include="reference.RFC.8040.xml"?>
+
 <?rfc include="reference.RFC.8089.xml"?>
 
 <?rfc include="reference.RFC.8174.xml"?>
+
+<?rfc include="reference.RFC.8341.xml"?>
 
 <reference anchor="Std-1003.1-2008" target="http://pubs.opengroup.org/onlinepubs/9699919799/">
 <front>
@@ -530,14 +538,6 @@ the following registration is requested:</t>
 <?rfc include="reference.RFC.8340.xml"?>
 
 <?rfc include="reference.RFC.8342.xml"?>
-
-<?rfc include="reference.RFC.3688.xml"?>
-
-<?rfc include="reference.RFC.6241.xml"?>
-
-<?rfc include="reference.RFC.8341.xml"?>
-
-<?rfc include="reference.RFC.8040.xml"?>
 
 </references>
 
