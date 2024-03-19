@@ -426,17 +426,18 @@ the following registration is requested:</t>
 </section>
 
 <section title="Security Considerations">
-<t>The YANG module defined in this document is designed to be accessed
-      via YANG based management protocols, such as NETCONF <xref target="RFC6241"/>
- and RESTCONF <xref target="RFC8040"/>
-. Both of these
-      protocols have mandatory-to-implement secure transport layers (e.g.,
-      SSH, TLS) with mutual authentication.</t>
+<t>The YANG module specified in this document defines a schema for data
+   that is designed to be accessed via network management protocols such
+   as NETCONF <xref target="RFC6241"/> or RESTCONF <xref target="RFC8040"/>.  The lowest NETCONF layer
+   is the secure transport layer, and the mandatory-to-implement secure
+   transport is Secure Shell (SSH) <xref target="RFC6242"/>.  The lowest RESTCONF layer
+   is HTTPS, and the mandatory-to-implement secure transport is TLS
+   <xref target="RFC8446"/>.</t>
 
-<t>The NETCONF access control model (NACM) <xref target="RFC8341"/>
-      provides the means to restrict access for particular users to a
-      pre-configured subset of all available protocol operations and
-      content.</t>
+<t>The NETCONF access control model <xref target="RFC8341"/> provides the means to
+   restrict access for particular NETCONF or RESTCONF users to a
+   preconfigured subset of all available NETCONF or RESTCONF protocol
+   operations and content.</t>
 
 <t>There are a number of data nodes defined in this YANG module that are
       writable/creatable/deletable (i.e., config true, which is the default).
@@ -506,6 +507,8 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.6241.xml"?>
 
+<?rfc include="reference.RFC.6242.xml"?>
+
 <?rfc include="reference.RFC.6991.xml"?>
 
 <?rfc include="reference.RFC.8525.xml"?>
@@ -519,6 +522,8 @@ the following registration is requested:</t>
 <?rfc include="reference.RFC.8174.xml"?>
 
 <?rfc include="reference.RFC.8341.xml"?>
+
+<?rfc include="reference.RFC.8446.xml"?>
 
 <reference anchor="Std-1003.1-2008" target="http://pubs.opengroup.org/onlinepubs/9699919799/">
 <front>
