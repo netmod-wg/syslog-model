@@ -3,7 +3,7 @@ module example-vendor-syslog-types {
   prefix vendor-syslogtypes;
 
   import ietf-syslog {
-    prefix syslogtypes;
+    prefix syslog;
   }
 
   organization
@@ -17,7 +17,7 @@ module example-vendor-syslog-types {
     "This module contains a collection of vendor-specific YANG type
      definitions for SYSLOG.";
 
-  revision 2017-08-11 {
+  revision 2024-03-19 {
     description
       "Version 1.0";
     reference
@@ -25,13 +25,13 @@ module example-vendor-syslog-types {
   }
 
   identity vendor_specific_type_1 {
-    base syslogtypes:syslog-facility;
+    base syslog:syslog-facility;
     description
       "Adding vendor specific type 1 to syslog-facility";
   }
 
   identity vendor_specific_type_2 {
-    base syslogtypes:syslog-facility;
+    base syslog:syslog-facility;
     description
       "Adding vendor specific type 2 to syslog-facility";
   }

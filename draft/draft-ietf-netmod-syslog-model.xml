@@ -554,44 +554,7 @@ the following registration is requested:</t>
 
 <figure>
 <artwork align="left"><![CDATA[
-module example-vendor-syslog-types {
-  namespace "http://example.com/ns/vendor-syslog-types";
-  prefix vendor-syslogtypes;
-
-  import ietf-syslog {
-    prefix syslogtypes;
-  }
-
-  organization "Example, Inc.";
-  contact
-    "Example, Inc.
-     Customer Service
-     
-     E-mail: syslog-yang@example.com";
-
-  description
-    "This module contains a collection of vendor-specific YANG type 
-     definitions for SYSLOG.";
-
-  revision 2017-08-11 {
-    description
-      "Version 1.0";
-    reference
-      "Vendor SYSLOG Types: SYSLOG YANG Model";
-  }
-
-  identity vendor_specific_type_1 {
-    base syslogtypes:syslog-facility;
-    description
-      "Adding vendor specific type 1 to syslog-facility";
-  }
-
-  identity vendor_specific_type_2 {
-    base syslogtypes:syslog-facility;
-    description
-      "Adding vendor specific type 2 to syslog-facility";
-  }
-}
+INSERT_TEXT_FROM_FILE(../src/yang/example-vendor-syslog-types.yang,68)
          ]]></artwork>
 </figure>
 </section>
