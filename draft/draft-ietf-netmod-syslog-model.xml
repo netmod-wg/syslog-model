@@ -416,7 +416,7 @@ the following registration is requested:</t>
 <artwork><![CDATA[
    name:         ietf-syslog
    namespace:    urn:ietf:params:xml:ns:yang:ietf-syslog
-   prefix:       ietf-syslog
+   prefix:       syslog
    reference:    RFC zzzz
 
 ]]></artwork>
