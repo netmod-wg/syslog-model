@@ -13,12 +13,12 @@
             <address>foo.example.com</address>
 	  </udp>
         </udp>
-        <facility-filter>
+        <syslog-filter>
           <facility-list>
             <facility>auth</facility>
             <severity>error</severity>
           </facility-list>
-        </facility-filter>
+        </syslog-filter>
       </destination>
     </remote>
   </actions>
