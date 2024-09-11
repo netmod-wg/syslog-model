@@ -700,69 +700,106 @@ module ietf-syslog {
                            connect to.";
                     }
                     choice transport {
-                        mandatory true;
-                        description
-                          "This choice describes the transport
-                           option.";
-                        case udp {
-                            container udp {
-                                description
-                                  "This container describes the UDP
-                                   transport options.";
-                                reference
-                                  "RFC 5426: Transmission of Syslog
-                                   Messages over UDP";
-                                leaf address {
-                                    type inet:host;
-                                    description
-                                      "The leaf uniquely specifies
-                                       the address of the remote
-                                       host. One of the following
-                                       must be specified: an ipv4
-                                       address, an ipv6 address, or a
-                                       host name.";
-                                }
-                                leaf port {
-                                    type inet:port-number;
-                                    default "514";
-                                    description
-                                      "This leaf specifies the port
-                                       number used to deliver
-                                       messages to the remote
-                                       server.";
-                                }
+                      mandatory true;
+                      description
+                        "This choice describes the transport option.";
+                      case udp {
+                        container udp {
+                          description
+                            "This container describes the UDP transport
+                             options.";
+                          reference
+                            "RFC 5426: Transmission of Syslog Messages
+                                       over UDP";
+                          list udp {
+                            key "address";
+                            description
+                              "List of all UDP sessions.";
+                            leaf address {
+                              type inet:host;
+                              description
+                                "The leaf uniquely specifies the
+                                 address of the remote host. One of
+                                 the following must be specified: an
+                                 ipv4 address, an ipv6 address, or a
+                                 host name.";
                             }
-                        }
-                        case tls {
-                            container tls {
-                                description
-                                  "This container describes the TLS
-                                   transport options.";
-                                reference
-                                  "RFC 5425: Transport Layer Security
-                                   (TLS) Transport Mapping for
-                                   Syslog ";
-                                leaf address {
-                                    type inet:host;
-                                    description
-                                      "The leaf uniquely specifies
-                                       the address of the remote
-                                       host. One of the following
-                                       must be specified: an ipv4
-                                       address, an ipv6 address, or
-                                       a host name.";
-                                }
-                                leaf port {
-                                    type inet:port-number;
-                                    default "6514";
-                                    description
-                                      "TCP port 6514 has been
-                                       allocated as the default port
-                                       for syslog over TLS.";
-                                }
-                                uses tlsc:tls-client-grouping;
+                            leaf port {
+                              type inet:port-number;
+                              default "514";
+                              description
+                                "This leaf specifies the port number
+                                 used to deliver messages to the remote
+                                 server.";
                             }
+                          }
                         }
+                      }
+                      case tcp {
+                        container tcp {
+                          description
+                            "This container describes the TCP transport
+                             options.";
+                          reference
+                            "RFC 5426: Transmission of Syslog
+                                       Messages over UDP";
+                          list tcp {
+                            key "address";
+                            description
+                              "List of TCP based sessions.";
+                            leaf address {
+                              type inet:host;
+                              description
+                                "The leaf uniquely specifies the
+                                 address of the remote host. One of
+                                 the following must be specified: an
+                                 ipv4 address, an ipv6 address, or a
+                                 host name.";
+                            }
+                            leaf port {
+                              type inet:port-number;
+                              default "514";
+                              description
+                                "This leaf specifies the port number
+                                 used to deliver messages to the remote
+                                 server.";
+                            }
+                          }
+                        }
+                      }
+                      case tls {
+                        container tls {
+                          description
+                            "This container describes the TLS
+                             transport options.";
+                          reference
+                            "RFC 5425: Transport Layer Security (TLS)
+                                       Transport Mapping for Syslog ";
+                          list tls {
+                            key "address";
+                            description
+                              "List of all TLS sessions.";
+                            leaf address {
+                              type inet:host;
+                              description
+                                "The leaf uniquely specifies the
+                                 address of the remote host. One of
+                                 the following must be specified: an
+                                 ipv4 address, an ipv6 address, or
+                                 a host name.";
+                            }
+                            leaf port {
+                              type inet:port-number;
+                              default "6514";
+                              description
+                                "TCP port 6514 has been allocated as
+                                 the default port for syslog over
+                                 TLS.";
+                            }
+                            uses tlsc:tls-client-grouping;
+                          }
+                        }
+                      }
                     }
                     uses selector;
                     uses structured-data;

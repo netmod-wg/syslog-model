@@ -9,7 +9,9 @@
       <destination>
         <name>remote1</name>
         <udp>
-          <address>foo.example.com</address>
+	  <udp>
+            <address>foo.example.com</address>
+	  </udp>
         </udp>
         <facility-filter>
           <facility-list>
