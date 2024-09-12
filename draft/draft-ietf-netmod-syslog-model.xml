@@ -166,7 +166,7 @@
         each syslog message received.</t>
 </section>
 
-<section title="NDMA Compliance">
+<section title="NMDA Compliance">
   <t>The YANG model in this document conforms to the Network Management
   Datastore Architecture defined in
     <xref target="RFC8342"/>
@@ -295,17 +295,19 @@ Collectors
       (Appendix A.1).</t>
 
 <section title="Syslog Module">
-<t>A simplified graphical representation of the data model is used in
-        this document. Please see <xref target="RFC8340"/>
- for
-        tree diagram notation.</t>
+  <t>
+    A simplified tree representation of the data model is used in
+    this document. Please see <xref target="RFC8340"/> for tree
+    diagram notation.
+  </t>
 
 <figure>
   <name>Tree Diagram for Syslog Model</name>
   <artwork><![CDATA[
-INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
+  INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-sub-tree.txt)
 
-]]>  </artwork>
+  ]]>
+  </artwork>
 </figure>
 </section>
 
@@ -545,6 +547,16 @@ the following registration is requested:</t>
 <?rfc include="reference.RFC.8342.xml"?>
 
 </references>
+
+<section anchor="tree-diagrams" title="Tree Diagrams">
+  <section anchor="complete-tree-diagram" title="Complete Tree Diagram">
+    <figure>
+      <artwork align="left"><![CDATA[
+      INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt,68)
+      ]]></artwork>
+    </figure>
+  </section>    
+</section>
 
 <section title="Implementer Guidelines">
 <section anchor="extending_facilities" title="Extending Facilities">
