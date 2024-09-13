@@ -99,9 +99,11 @@
     <workgroup>NETMOD WG</workgroup>
 
     <abstract>
-      <t>This document defines a YANG data model for the configuration of a
-      syslog process. It is intended this model be used by vendors who
-      implement syslog in their systems.</t>
+      <t>
+	This document defines a YANG data model for the configuration
+	of a syslog process. It is intended that this model be used by
+	vendors who implement syslog collectors in their systems.
+      </t>
     </abstract>
   </front>
 
@@ -119,8 +121,10 @@
       implementations to support only those syslog features that lie within
       their capabilities.</t>
 
-    <t>This module can be used to configure the syslog application conceptual
-      layers as implemented on the target system.</t>
+      <t>
+	This module can be used to configure the syslog application
+	conceptual layers as implemented on the syslog collector.
+      </t>
 
     <t>Essentially, a syslog process receives messages (from the kernel,
       processes, applications or other syslog processes) and processes them.
