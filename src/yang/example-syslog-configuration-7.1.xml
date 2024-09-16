@@ -6,12 +6,12 @@
 <syslog xmlns="urn:ietf:params:xml:ns:yang:ietf-syslog">
   <actions>
     <console>
-      <syslog-filter>
+      <filter>
         <facility-list>
           <facility>all</facility>
           <severity>critical</severity>
         </facility-list>
-      </syslog-filter>
+      </filter>
     </console>
   </actions>
 </syslog>

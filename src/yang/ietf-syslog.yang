@@ -526,7 +526,7 @@ module ietf-syslog {
              pattern-match regular-expression-match-string
            If both facility and pattern-match are specified, both
            must match in order for a log message to be selected.";
-        container syslog-filter {
+        container filter {
             description
               "This container describes the syslog filter
                parameters.";
@@ -746,7 +746,7 @@ module ietf-syslog {
                           list tcp {
                             key "address";
                             description
-                              "List of TCP based sessions.";
+                              "List of cleartext TCP based sessions.";
                             leaf address {
                               type inet:host;
                               description

@@ -279,6 +279,13 @@ Collectors
 <t>The facility is one of a specific syslog-facility, or all
       facilities.</t>
 
+      <t>
+	The model offers the ability to select a transport that a user
+	might want to use for a remote relay or collector. The choice
+	is between using UDP, cleartext TCP or TLS based sessions. The
+	user can configure multiple relays or collectors, but they
+	have to use the same transport.
+      </t>
 <t>The severity is one of type syslog-severity, all severities, or none.
       None is a special case that can be used to disable a filter. When
       filtering severity, the default comparison is that messages of the
@@ -290,9 +297,12 @@ Collectors
       messages of the specified severity and higher. Actions are used to log
       the message, block the message, or stop the message from being logged.</t>
 
-<t>Many vendors extend the list of facilities available for logging in
-      their implementation. An example is included in Extending Facilities
-      (Appendix A.1).</t>
+      <t>
+	Many vendors extend the list of facilities available for
+	logging in their implementation. An example is included in
+	<xref target="extending_facilities">Extending
+	Facilities</xref>.
+      </t>
 
 <section title="Syslog Module">
 <t>A simplified graphical representation of the data model is used in
