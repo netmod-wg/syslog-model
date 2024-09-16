@@ -149,21 +149,34 @@
 </section>
 
 <section title="Terminology">
-  <t>The term "originator" is defined in <xref target="RFC5424"/>
-: an
-        "originator" generates syslog content to be carried in a message.</t>
+  <t>
+    The following terms are used throughout this document:
+  </t>
+  <ul>
+    <li>
+      Originator: an "originator" refers to an entity that generates
+      syslog content to be carried in a message.  The term is defined
+      in <xref target="RFC5424"/>
+    </li>
 
-  <t>The term "relay" is defined in <xref target="RFC5424"/>
-: a "relay"
-        forwards messages, accepting messages from originators or other relays
-        and sending them to collectors or other relays</t>
+    <li>
+      Relay: A "relay" is an entity that forwards syslog messages. It
+      accepts messages from originators or other relays and sends them
+      to collectors or other relays. The term is defined in <xref
+      target="RFC5424"/>
+    </li>
 
-  <t>The term "collectors" is defined in <xref target="RFC5424"/>
-: a
-        "collector" gathers syslog content for further analysis.</t>
+    <li>
+      Collector: A "collector" gathers syslog content for
+      further analysis. The term is defined in <xref
+      target="RFC5424"/>.
+    </li>
 
-  <t>The term "action" refers to the processing that takes place for
-        each syslog message received.</t>
+    <li>
+      Action: The term "action" refers to the processing that takes
+      place for each syslog message received.
+    </li>
+  </ul>
 </section>
 
 <section title="NMDA Compliance">
@@ -199,16 +212,22 @@
 </section>
 
 <section title="Design of the Syslog Model">
-<t>The syslog model was designed by comparing various syslog features
-      implemented by various vendors' in different implementations.</t>
+  <t>
+    The syslog model was designed by comparing various syslog features
+    implemented by various vendors' in different implementations.
+  </t>
 
-<t>This document addresses the common leafs between implementations and
-      creates a common model, which can be augmented with proprietary
-      features, if necessary. This model is designed to be very simple for
-      maximum flexibility.</t>
-
-<t>Some optional features are defined in this document to specify
-      functionality that is present in specific vendor configurations.</t>
+  <t>
+    The module defines leafs that are common across
+    implementations. Its simple design is meant to offer maximum
+    flexibility. However, not all optional features defined in this
+    document are present in all vendor implementations. Vendors
+    therefore, need to use the feature statements to specify the
+    optional features they support. At the same time, vendors can
+    augment the model to add proprietary features. <xref
+    target="extending_facilities">Extending Facilities</xref> shows an
+    examples of how that can be realized.
+  </t>
 
 <t>Syslog consists of originators and collectors. The following diagram
       shows syslog messages flowing from originators, to collectors where
