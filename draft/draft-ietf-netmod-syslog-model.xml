@@ -99,9 +99,11 @@
     <workgroup>NETMOD WG</workgroup>
 
     <abstract>
-      <t>This document defines a YANG data model for the configuration of a
-      syslog process. It is intended this model be used by vendors who
-      implement syslog in their systems.</t>
+      <t>
+	This document defines a YANG data model for the configuration
+	of a syslog process. It is intended that this model be used by
+	vendors who implement syslog collectors in their systems.
+      </t>
     </abstract>
   </front>
 
@@ -119,8 +121,10 @@
       implementations to support only those syslog features that lie within
       their capabilities.</t>
 
-    <t>This module can be used to configure the syslog application conceptual
-      layers as implemented on the target system.</t>
+      <t>
+	This module can be used to configure the syslog application
+	conceptual layers as implemented on the syslog collector.
+      </t>
 
     <t>Essentially, a syslog process receives messages (from the kernel,
       processes, applications or other syslog processes) and processes them.
@@ -166,7 +170,7 @@
         each syslog message received.</t>
 </section>
 
-<section title="NDMA Compliance">
+<section title="NMDA Compliance">
   <t>The YANG model in this document conforms to the Network Management
   Datastore Architecture defined in
     <xref target="RFC8342"/>
@@ -305,17 +309,19 @@ Collectors
       </t>
 
 <section title="Syslog Module">
-<t>A simplified graphical representation of the data model is used in
-        this document. Please see <xref target="RFC8340"/>
- for
-        tree diagram notation.</t>
+  <t>
+    A simplified tree representation of the data model is used in
+    this document. Please see <xref target="RFC8340"/> for tree
+    diagram notation.
+  </t>
 
 <figure>
   <name>Tree Diagram for Syslog Model</name>
   <artwork><![CDATA[
-INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
+  INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-sub-tree.txt)
 
-]]>  </artwork>
+  ]]>
+  </artwork>
 </figure>
 </section>
 
@@ -323,25 +329,16 @@ INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt)
 
 <section title="Syslog YANG Module">
 <section title="The ietf-syslog Module">
-<t>This module imports typedefs from <xref target="RFC6991"/>
-,
-<xref target="RFC8343"/>
-,
-        groupings from <xref target="I-D.ietf-netconf-crypto-types"/>
-, 
-        and <xref target="I-D.ietf-netconf-tls-client-server"/>
-, 
-        and it references <xref target="RFC5424"/>
-,
-<xref target="RFC5425"/>
-,<xref target="RFC5426"/>
-, 
-        and <xref target="RFC5848"/>
-,<xref target="RFC8089"/>
-,
-<xref target="RFC8174"/>
-, and <xref target="Std-1003.1-2008"/>
-.</t>
+  <t>
+    This module imports typedefs from <xref target="RFC6991"/>, <xref
+    target="RFC8343"/>, groupings from <xref
+    target="I-D.ietf-netconf-crypto-types"/>, and <xref
+    target="I-D.ietf-netconf-tls-client-server"/>, and it references
+    <xref target="RFC5424"/>, <xref target="RFC5425"/>, <xref
+    target="RFC5426"/>, <xref target="RFC5848"/>, <xref
+    target="RFC6587"/> <xref target="RFC8089"/>, <xref
+    target="RFC8174"/>, and <xref target="Std-1003.1-2008"/>.
+  </t>
 
 <figure>
 <name>Sylog YANG Model</name>
@@ -509,10 +506,6 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.5424.xml"?>
 
-<?rfc include="reference.RFC.5425.xml"?>
-
-<?rfc include="reference.RFC.5426.xml"?>
-
 <?rfc include="reference.RFC.5848.xml"?>
 
 <?rfc include="reference.RFC.6241.xml"?>
@@ -550,11 +543,24 @@ the following registration is requested:</t>
 </references>
 
 <references title="Informative References">
-<?rfc include="reference.RFC.8340.xml"?>
 
+<?rfc include="reference.RFC.5425.xml"?>
+<?rfc include="reference.RFC.5426.xml"?>
+<?rfc include="reference.RFC.6587.xml"?>
+<?rfc include="reference.RFC.8340.xml"?>
 <?rfc include="reference.RFC.8342.xml"?>
 
 </references>
+
+<section anchor="tree-diagrams" title="Tree Diagrams">
+  <section anchor="complete-tree-diagram" title="Complete Tree Diagram">
+    <figure>
+      <artwork align="left"><![CDATA[
+      INSERT_TEXT_FROM_FILE(../bin/ietf-syslog@YYYY-MM-DD-tree.txt,68)
+      ]]></artwork>
+    </figure>
+  </section>    
+</section>
 
 <section title="Implementer Guidelines">
 <section anchor="extending_facilities" title="Extending Facilities">
