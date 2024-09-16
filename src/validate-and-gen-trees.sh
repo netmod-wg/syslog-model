@@ -33,15 +33,15 @@ for i in ../bin/ietf-*\@$(date +%Y-%m-%d).yang; do
 done
 rm ../bin/*-tree.txt.tmp
 
-# Generate a sub-tree with a depth of 3
+# Generate a sub-tree with a depth of 10
 
 for i in ../bin/ietf-syslog\@$(date +%Y-%m-%d).yang; do
     name=$(echo $i | cut -f 1-3 -d '.')
     echo "Generating abridged tree diagram for $name.yang"
     if test "${name#^example}" = "$name"; then
-        response=$(pyang --lint --strict --canonical -p ../bin/iana/yang-parameters -p ../bin/dependent -f tree --tree-depth=3 --max-line-length=72 --tree-line-length=69 $name.yang >$name-sub-tree.txt.tmp)
+        response=$(pyang --lint --strict --canonical -p ../bin/iana/yang-parameters -p ../bin/dependent -f tree --tree-depth=10 --max-line-length=72 --tree-line-length=69 $name.yang >$name-sub-tree.txt.tmp)
     else
-        response=$(pyang --ietf --strict --canonical -p ../bin/iana/yang-parameters -f tree --tree-depth=3 --max-line-length=72 --tree-line-length=69 $name.yang >$name-sub-tree.txt.tmp)
+        response=$(pyang --ietf --strict --canonical -p ../bin/iana/yang-parameters -f tree --tree-depth=10 --max-line-length=72 --tree-line-length=69 $name.yang >$name-sub-tree.txt.tmp)
     fi
     if [ $? -ne 0 ]; then
         printf "$name.yang failed generation of sub-tree diagram\n"
