@@ -355,8 +355,8 @@ Collectors
     target="I-D.ietf-netconf-tls-client-server"/>, and it references
     <xref target="RFC5424"/>, <xref target="RFC5425"/>, <xref
     target="RFC5426"/>, <xref target="RFC5848"/>, <xref
-    target="RFC6587"/> <xref target="RFC8089"/>, <xref
-    target="RFC8174"/>, and <xref target="Std-1003.1-2008"/>.
+    target="RFC8089"/>, <xref target="RFC8174"/>, and <xref
+    target="Std-1003.1-2008"/>.
   </t>
 
 <figure>
@@ -525,6 +525,10 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.5424.xml"?>
 
+<?rfc include="reference.RFC.5425.xml"?>
+
+<?rfc include="reference.RFC.5426.xml"?>
+
 <?rfc include="reference.RFC.5848.xml"?>
 
 <?rfc include="reference.RFC.6241.xml"?>
@@ -563,9 +567,6 @@ the following registration is requested:</t>
 
 <references title="Informative References">
 
-<?rfc include="reference.RFC.5425.xml"?>
-<?rfc include="reference.RFC.5426.xml"?>
-<?rfc include="reference.RFC.6587.xml"?>
 <?rfc include="reference.RFC.8340.xml"?>
 <?rfc include="reference.RFC.8342.xml"?>
 
