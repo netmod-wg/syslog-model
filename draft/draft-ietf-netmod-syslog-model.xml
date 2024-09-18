@@ -505,9 +505,12 @@ the following registration is requested:</t>
 
     <list hangIndent="6" style="hanging">
       <t hangText=" remote/destination/transport:">This subtree
-      contains information about other hosts in the network, and the
-      TLS transport certificate properties if TLS is selected as the
-      transport protocol.
+      contains information about other hosts in the network, the
+      services available on those hosts, and the TLS transport
+      certificate properties if TLS is selected as the transport
+      protocol. Knowing that a service like syslog (udp/514) is
+      enabled on the host, will allow a malicious user to spam the
+      host on that port.
       </t>
 
       <t hangText=" remote/destination/signing:">This subtree contains
