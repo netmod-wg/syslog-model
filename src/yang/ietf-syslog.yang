@@ -763,42 +763,6 @@ module ietf-syslog {
               }
             }
 
-            case tcp {
-              container tcp {
-                description
-                  "This container describes the cleartext TCP
-                   transport options.";
-                reference
-                  "RFC 6587: Transmission of Syslog Messages over
-                             TCP";
-
-                list tcp {
-                  key "address";
-                  description
-                    "List of cleartext TCP based sessions.";
-
-                  leaf address {
-                    type inet:host;
-                    description
-                      "The leaf uniquely specifies the address of the
-                       remote host. One of the following must be
-                       specified:
-                       - an ipv4 address
-                       - an ipv6 address
-                       - or a host name.";
-                  }
-
-                  leaf port {
-                    type inet:port-number;
-                    default "514";
-                    description
-                      "This leaf specifies the port number used to
-                       deliver messages to the remote server.";
-                  }
-                }
-              }
-            }
-
             case tls {
               container tls {
                 description

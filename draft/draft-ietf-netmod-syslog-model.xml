@@ -286,9 +286,9 @@ Collectors
       <t>
 	The model offers the ability to select a transport that a user
 	might want to use for a remote relay or collector. The choice
-	is between using UDP, cleartext TCP or TLS based sessions. The
-	user can configure multiple relays or collectors, but they
-	have to use the same transport.
+	is between using UDP, or TLS based sessions. The user can
+	configure multiple relays or collectors, but they have to use
+	the same transport.
       </t>
 <t>The severity is one of type syslog-severity, all severities, or none.
       None is a special case that can be used to disable a filter. When
