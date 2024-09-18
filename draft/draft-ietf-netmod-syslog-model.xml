@@ -452,62 +452,97 @@ the following registration is requested:</t>
 </section>
 
 <section title="Security Considerations">
-<t>The YANG module specified in this document defines a schema for data
-   that is designed to be accessed via network management protocols such
-   as NETCONF <xref target="RFC6241"/> or RESTCONF <xref target="RFC8040"/>.  The lowest NETCONF layer
-   is the secure transport layer, and the mandatory-to-implement secure
-   transport is Secure Shell (SSH) <xref target="RFC6242"/>.  The lowest RESTCONF layer
-   is HTTPS, and the mandatory-to-implement secure transport is TLS
-   <xref target="RFC8446"/>.</t>
+  <t>
+  This section is modeled after the template defined in <xref
+  section="3.7.1" target="RFC8407"/>.
+  </t>
 
-<t>The NETCONF access control model <xref target="RFC8341"/> provides the means to
-   restrict access for particular NETCONF or RESTCONF users to a
-   preconfigured subset of all available NETCONF or RESTCONF protocol
-   operations and content.</t>
+  <t>
+    The "ietf-syslog" YANG module specified in this document defines a
+    data model that is designed to be accessed via YANG-based
+    management protocols such as NETCONF <xref target="RFC6241"/> and
+    RESTCONF <xref target="RFC8040"/>. These protocols have
+    mandatory-to-implement secure transport layers (e.g., Secure Shell
+    (SSH) <xref target="RFC4252"/>, TLS <xref target="RFC8446"/>, and
+    QUIC <xref target="RFC9000"/>) and mandatory-to-implement mutual
+    authentication.
+  </t>
 
-<t>There are a number of data nodes defined in this YANG module that are
-      writable/creatable/deletable (i.e., config true, which is the default).
-      These data nodes should be considered sensitive or vulnerable in all
-      network environments.  Logging in particular is used to assess the state of 
-      systems and can be used to indicate a network compromise.  If logging were 
-      to be disabled through malicious means, attacks may not be readily detectable.  
-      Therefore write operations (e.g., edit-config) to these data
-      nodes without proper protection can have a negative effect on network
-      operations and on network security.</t>
+  <t>
+    The NETCONF access control model <xref target="RFC8341"/> provides
+    the means to restrict access for particular NETCONF or RESTCONF
+    users to a preconfigured subset of all available NETCONF or
+    RESTCONF protocol operations and content.
+  </t>
 
-<t>In addition there are data nodes that require careful analysis and
+  <t>
+    This module imports groupings from ietf-crypto-types YANG module
+    defined in <xref target="I-D.ietf-netconf-crypto-types">YANG
+    Groupings for Crypto Types</xref>. Security considerations
+    described in that document apply to this module also.
+  </t>
+
+  <t>
+    There are a number of data nodes defined in this YANG module that
+    are writable/creatable/deletable (i.e., config true, which is the
+    default).  These data nodes should be considered sensitive or
+    vulnerable in all network environments.  Logging in particular is
+    used to assess the state of systems and can be used to indicate a
+    network compromise.  If logging were to be disabled through
+    malicious means, attacks may not be readily detectable.  Therefore
+    write operations (e.g., edit-config) to these data nodes without
+    proper protection can have a negative effect on network operations
+    and on network security.
+  </t>
+
+  <t>
+    In addition there are data nodes that require careful analysis and
       review. These are the subtrees and data nodes and their
-      sensitivity/vulnerability: <list hangIndent="6" style="hanging">
-<t hangText="   facility-filter/pattern-match:">When writing this
-          node, implementations MUST ensure that the regular expression
-          pattern match is not constructed to cause a regular expression
-          denial of service attack due to a pattern that causes the regular
-          expression implementation to work very slowly (exponentially related
-          to input size).</t>
+      sensitivity/vulnerability:
 
-<t hangText="   remote/destination/signing/cert-signer:">When
-          writing this subtree, implementations MUST NOT specify a private key
-          that is used for any other purpose.</t>
-</list>
-</t>
+      <list hangIndent="6" style="hanging">
+	<t hangText=" facility-filter/pattern-match:">When writing
+	this node, implementations MUST ensure that the regular
+	expression pattern match is not constructed to cause a regular
+	expression denial of service attack due to a pattern that
+	causes the regular expression implementation to work very
+	slowly (exponentially related to input size).
+	</t>
 
-<t>Some of the readable data nodes in this YANG module may be considered
-      sensitive or vulnerable in some network environments. It is thus
-      important to control read access (e.g., via get, get-config, or
-      notification) to these data nodes. These are the subtrees and data nodes
-      and their sensitivity/vulnerability: <list hangIndent="6" style="hanging">
-<t hangText="   remote/destination/transport:">This subtree contains
-          information about other hosts in the network, and the TLS transport
-          certificate properties if TLS is selected as the transport
-          protocol.</t>
+	<t hangText=" remote/destination/signing/cert-signer:">When
+	writing this subtree, implementations MUST NOT specify a
+	private key that is used for any other purpose.</t>
+      </list>
+  </t>
 
-<t hangText="   remote/destination/signing:">This subtree contains
-          information about the syslog message signing properties including
-          signing certificate information.</t>
-</list>
-</t>
+  <t>
+    Some of the readable data nodes in this YANG module may be
+    considered sensitive or vulnerable in some network
+    environments. It is thus important to control read access (e.g.,
+    via get, get-config, or notification) to these data nodes. These
+    are the subtrees and data nodes and their
+    sensitivity/vulnerability:
 
-<t>There are no RPC operations defined in this YANG module.</t>
+    <list hangIndent="6" style="hanging">
+      <t hangText=" remote/destination/transport:">This subtree
+      contains information about other hosts in the network, the
+      services available on those hosts, and the TLS transport
+      certificate properties if TLS is selected as the transport
+      protocol. Knowing that a service like syslog (udp/514) is
+      enabled on the host, will allow a malicious user to spam the
+      host on that port.
+      </t>
+
+      <t hangText=" remote/destination/signing:">This subtree contains
+      information about the syslog message signing properties
+      including signing certificate information.
+      </t>
+    </list>
+  </t>
+
+  <t>
+    There are no RPC operations defined in this YANG module.
+  </t>
 </section>
 </middle>
 
@@ -523,6 +558,8 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.3688.xml"?>
 
+<?rfc include="reference.RFC.4252.xml"?>
+
 <?rfc include="reference.RFC.5424.xml"?>
 
 <?rfc include="reference.RFC.5425.xml"?>
@@ -532,8 +569,6 @@ the following registration is requested:</t>
 <?rfc include="reference.RFC.5848.xml"?>
 
 <?rfc include="reference.RFC.6241.xml"?>
-
-<?rfc include="reference.RFC.6242.xml"?>
 
 <?rfc include="reference.RFC.6991.xml"?>
 
@@ -547,9 +582,13 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.8174.xml"?>
 
+<?rfc include="reference.RFC.8407.xml"?>
+
 <?rfc include="reference.RFC.8341.xml"?>
 
 <?rfc include="reference.RFC.8446.xml"?>
+
+<?rfc include="reference.RFC.9000.xml"?>
 
 <reference anchor="Std-1003.1-2008" target="http://pubs.opengroup.org/onlinepubs/9699919799/">
 <front>
