@@ -533,7 +533,7 @@ module ietf-syslog {
        If both facility and pattern-match are specified, both
        must match in order for a log message to be selected.";
 
-    container facility-filter {
+    container filter {
       description
         "This container describes the syslog filter
          parameters.";
@@ -736,23 +736,29 @@ module ietf-syslog {
                   "RFC 5426: Transmission of Syslog Messages over
                              UDP";
 
-                leaf address {
-                  type inet:host;
+                list udp {
+                  key "address";
                   description
-                    "The leaf uniquely specifies the address of the
-                     remote host. One of the following must be
-                     specified: 
-                     - an ipv4 address, 
-                     - an ipv6 address, or a
-                     - host name.";
-                }
+                    "List of all UDP sessions.";
 
-                leaf port {
-                  type inet:port-number;
-                  default "514";
-                  description
-                    "This leaf specifies the port number used to
-                     deliver messages to the remote server.";
+                  leaf address {
+                    type inet:host;
+                    description
+                      "The leaf uniquely specifies the address of the
+                      remote host. One of the following must be
+                      specified: 
+                      - an ipv4 address, 
+                      - an ipv6 address, or a
+                      - host name.";
+                  }
+
+                  leaf port {
+                    type inet:port-number;
+                    default "514";
+                    description
+                      "This leaf specifies the port number used to
+                      deliver messages to the remote server.";
+                  }
                 }
               }
             }
@@ -766,23 +772,29 @@ module ietf-syslog {
                   "RFC 5425: Transport Layer Security (TLS) Transport
                              Mapping for Syslog ";
 
-                leaf address {
-                  type inet:host;
+                list tls {
+                  key "address";
                   description
-                    "The leaf uniquely specifies the address of the
-                     remote host. One of the following must be
-                     specified: an ipv4 address, an ipv6 address, or
-                     a host name.";
-                }
+                    "List of all TLS based sessions.";
 
-                leaf port {
-                  type inet:port-number;
-                  default "6514";
-                  description
-                    "TCP port 6514 has been allocated as the default
-                     port for syslog over TLS.";
+                  leaf address {
+                    type inet:host;
+                    description
+                      "The leaf uniquely specifies the address of the
+                      remote host. One of the following must be
+                      specified: an ipv4 address, an ipv6 address, or
+                      a host name.";
+                  }
+
+                  leaf port {
+                    type inet:port-number;
+                    default "6514";
+                    description
+                      "TCP port 6514 has been allocated as the
+                       default port for syslog over TLS.";
+                  }
+                  uses tlsc:tls-client-grouping;
                 }
-                uses tlsc:tls-client-grouping;
               }
             }
           }

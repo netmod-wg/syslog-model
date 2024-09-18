@@ -9,14 +9,16 @@
       <destination>
         <name>remote1</name>
         <udp>
-          <address>foo.example.com</address>
+	  <udp>
+            <address>foo.example.com</address>
+	  </udp>
         </udp>
-        <facility-filter>
+        <filter>
           <facility-list>
             <facility>auth</facility>
             <severity>error</severity>
           </facility-list>
-        </facility-filter>
+        </filter>
       </destination>
     </remote>
   </actions>

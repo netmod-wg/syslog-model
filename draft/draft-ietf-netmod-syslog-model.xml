@@ -302,6 +302,13 @@ Collectors
 <t>The facility is one of a specific syslog-facility, or all
       facilities.</t>
 
+      <t>
+	The model offers the ability to select a transport that a user
+	might want to use for a remote relay or collector. The choice
+	is between using UDP, or TLS based sessions. The user can
+	configure multiple relays or collectors, but they have to use
+	the same transport.
+      </t>
 <t>The severity is one of type syslog-severity, all severities, or none.
       None is a special case that can be used to disable a filter. When
       filtering severity, the default comparison is that messages of the
@@ -313,9 +320,12 @@ Collectors
       messages of the specified severity and higher. Actions are used to log
       the message, block the message, or stop the message from being logged.</t>
 
-<t>Many vendors extend the list of facilities available for logging in
-      their implementation. An example is included in Extending Facilities
-      (Appendix A.1).</t>
+      <t>
+	Many vendors extend the list of facilities available for
+	logging in their implementation. An example is included in
+	<xref target="extending_facilities">Extending
+	Facilities</xref>.
+      </t>
 
 <section title="Syslog Module">
   <t>
@@ -338,25 +348,16 @@ Collectors
 
 <section title="Syslog YANG Module">
 <section title="The ietf-syslog Module">
-<t>This module imports typedefs from <xref target="RFC6991"/>
-,
-<xref target="RFC8343"/>
-,
-        groupings from <xref target="I-D.ietf-netconf-crypto-types"/>
-, 
-        and <xref target="I-D.ietf-netconf-tls-client-server"/>
-, 
-        and it references <xref target="RFC5424"/>
-,
-<xref target="RFC5425"/>
-,<xref target="RFC5426"/>
-, 
-        and <xref target="RFC5848"/>
-,<xref target="RFC8089"/>
-,
-<xref target="RFC8174"/>
-, and <xref target="Std-1003.1-2008"/>
-.</t>
+  <t>
+    This module imports typedefs from <xref target="RFC6991"/>, <xref
+    target="RFC8343"/>, groupings from <xref
+    target="I-D.ietf-netconf-crypto-types"/>, and <xref
+    target="I-D.ietf-netconf-tls-client-server"/>, and it references
+    <xref target="RFC5424"/>, <xref target="RFC5425"/>, <xref
+    target="RFC5426"/>, <xref target="RFC5848"/>, <xref
+    target="RFC6587"/> <xref target="RFC8089"/>, <xref
+    target="RFC8174"/>, and <xref target="Std-1003.1-2008"/>.
+  </t>
 
 <figure>
 <name>Sylog YANG Model</name>
@@ -524,10 +525,6 @@ the following registration is requested:</t>
 
 <?rfc include="reference.RFC.5424.xml"?>
 
-<?rfc include="reference.RFC.5425.xml"?>
-
-<?rfc include="reference.RFC.5426.xml"?>
-
 <?rfc include="reference.RFC.5848.xml"?>
 
 <?rfc include="reference.RFC.6241.xml"?>
@@ -565,8 +562,11 @@ the following registration is requested:</t>
 </references>
 
 <references title="Informative References">
-<?rfc include="reference.RFC.8340.xml"?>
 
+<?rfc include="reference.RFC.5425.xml"?>
+<?rfc include="reference.RFC.5426.xml"?>
+<?rfc include="reference.RFC.6587.xml"?>
+<?rfc include="reference.RFC.8340.xml"?>
 <?rfc include="reference.RFC.8342.xml"?>
 
 </references>
